@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Meza | GRAPH Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Omotola Idowu | AI for Work & Research</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
         :root {
-            --primary: #22c55e; /* Vibrant Green from reference */
-            --primary-dark: #16a34a;
-            --secondary: #0f172a; /* Deep Navy text */
-            --bg-light: #ffffff;
-            --bg-alt: #f8fafc;
-            --text-main: #334155;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --primary: #000000;
+            --accent: #10b981; 
+            --bg: #ffffff;
+            --bg-alt: #fcfcfc;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --card-hover: #f9fafb;
         }
 
         * {
@@ -28,382 +26,321 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
+            background-color: var(--bg);
             color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Outfit', sans-serif;
-            color: var(--secondary);
-            font-weight: 700;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 800px; /* Centered, narrower layout like the reference */
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* Header & Nav */
+        /* Navigation */
         nav {
-            background: white;
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 2rem 0;
+            margin-bottom: 4rem;
         }
 
-        .nav-flex {
+        .nav-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
         }
 
         .logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--secondary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--text-muted);
+            font-size: 0.85rem;
             font-weight: 500;
-            font-size: 0.95rem;
+            margin-left: 1.5rem;
             transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.05), transparent);
-            text-align: center;
+        /* Hero */
+        header {
+            margin-bottom: 5rem;
         }
 
-        .badge {
-            display: inline-block;
-            background: #dcfce7;
-            color: var(--primary-dark);
-            padding: 0.4rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
+        header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
             margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
+        header p {
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
+            max-width: 600px;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border);
-            color: var(--secondary);
-        }
-
-        .btn-outline:hover {
-            background: var(--bg-alt);
-        }
-
-        /* Section Styling */
+        /* Sections */
         section {
-            padding: 80px 0;
+            margin-bottom: 6rem;
         }
 
-        .section-header {
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        /* About / Experience Grid */
+        .bio-text {
+            font-size: 1.05rem;
             margin-bottom: 3rem;
-            text-align: center;
         }
 
-        .section-header h2 {
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-        }
-
-        /* About Grid */
-        .about-grid {
+        .exp-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-content h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Module Cards */
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
-        .module-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: box-shadow 0.3s, border-color 0.3s;
-            display: flex;
-            flex-direction: column;
+        .exp-item {
+            border-left: 2px solid var(--border);
+            padding-left: 1.5rem;
+            transition: border-color 0.3s;
         }
 
-        .module-card:hover {
-            box-shadow: var(--card-shadow);
-            border-color: var(--primary);
+        .exp-item:hover {
+            border-color: var(--accent);
         }
 
-        .module-number {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .exp-item h4 {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .exp-item span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: block;
             margin-bottom: 0.5rem;
         }
 
-        .module-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
+        /* Curriculum Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        .module-card p {
+        .timeline-item {
+            background: white;
+            padding: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .week-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.9rem;
+            min-width: 60px;
+        }
+
+        /* Artifact Blocks */
+        .artifact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .artifact-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .artifact-card:hover {
+            background: var(--card-hover);
+            border-color: var(--text-main);
+            transform: translateY(-2px);
+        }
+
+        .artifact-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .artifact-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
         }
 
         .status-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-
-        /* Experience Pills */
-        .skill-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .skill-pill {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
             background: var(--bg-alt);
             border: 1px solid var(--border);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        }
+
+        .status-pill.done {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border-color: rgba(16, 185, 129, 0.2);
         }
 
         /* Footer */
         footer {
-            background: var(--bg-alt);
-            padding: 60px 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--border);
-        }
-
-        .footer-content {
             text-align: center;
         }
 
-        .footer-logo {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
+        .social-links {
+            margin-bottom: 1.5rem;
         }
 
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.25rem; }
+        .social-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.25rem; }
+            .timeline-item { flex-direction: column; gap: 0.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="container nav-flex">
-            <a href="#" class="logo">VICTOR<span>MEZA</span></a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#course">GRAPH Program</a>
-                <a href="#portfolio">Portfolio Log</a>
-                <a href="#contact">Contact</a>
+    <div class="container">
+        <nav>
+            <div class="nav-content">
+                <div class="logo">OMOTOLA IDOWU</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#course">Course</a>
+                    <a href="#artifacts">Artifacts</a>
+                </div>
             </div>
-            <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Get in Touch</a>
-        </div>
-    </nav>
+        </nav>
 
-    <header class="hero">
-        <div class="container">
-            <span class="badge">GenAI Portfolio 2026</span>
-            <h1>Bridging <span style="color: var(--primary);">Agriculture</span> and Artificial Intelligence</h1>
-            <p>I'm Victor Meza, an International Agriculture Development student at UC Davis using generative AI to optimize research and sustainable farming.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="#portfolio" class="btn btn-primary">View Assignments</a>
-                <a href="#about" class="btn btn-outline">My Story</a>
+        <header>
+            <h1>Generative AI for <br>Work & Research.</h1>
+            <p>Documenting the intersection of Fleet Logistics and Large Language Models. A portfolio of work from the Graph AI Cohort 2024.</p>
+        </header>
+
+        <section id="about">
+            <span class="section-label">Background</span>
+            <div class="bio-text">
+                <p>Currently serving as <strong>Fleet Lead</strong> at Nigerian Bottling Company. I focus on optimizing complex logistics networks, predictive maintenance, and operational efficiency.</p>
             </div>
-        </div>
-    </header>
+            <div class="exp-grid">
+                <div class="exp-item">
+                    <span>2021 — PRESENT</span>
+                    <h4>Fleet Lead at NBC</h4>
+                    <p>Optimizing asset utilization and managing vendor maintenance ecosystems.</p>
+                </div>
+                <div class="exp-item">
+                    <span>2019 — 2021</span>
+                    <h4>Fleet Officer at Manoby International</h4>
+                    <p>Documentation, vehicle inspection, and fuel efficiency auditing.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="about" style="background-color: var(--bg-alt);">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem;">The Background</span>
-                    <h3>Rooted in Research, Growing with Tech</h3>
-                    <p>Currently studying at <strong>UC Davis</strong>, my work focuses on small-scale organic mixed vegetable production and soil science. I combine this academic foundation with hands-on entrepreneurial experience as the owner of <strong>Plants4You</strong>.</p>
-                    <div class="skill-container">
-                        <div class="skill-pill">Botany & Physiology</div>
-                        <div class="skill-pill">Soil Science</div>
-                        <div class="skill-pill">E-Commerce</div>
-                        <div class="skill-pill">Tagalog Interpreter</div>
-                        <div class="skill-pill">Inventory Logic</div>
+        <section id="course">
+            <span class="section-label">The Curriculum</span>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="week-num">W01</div>
+                    <div class="module-content">
+                        <h4 style="font-weight: 600;">Websites & Foundations</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">LLM providers, Markdown for research, and building personal portfolio foundations.</p>
                     </div>
                 </div>
-                <div style="background: white; padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--card-shadow);">
-                    <h4 style="margin-bottom: 1rem;">Core Impact</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted);">My objective is to secure a Spring quarter internship at the <strong>Student Farm Market Garden</strong> to apply AI-driven efficiency to organic farming.</p>
-                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 600;">Etsy Sales</span>
-                            <span style="color: var(--primary-dark); font-weight: 700;">500+</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="font-weight: 600;">Logistics Efficiency</span>
-                            <span style="color: var(--primary-dark); font-weight: 700;">+15%</span>
-                        </div>
+                <div class="timeline-item">
+                    <div class="week-num">W02</div>
+                    <div class="module-content">
+                        <h4 style="font-weight: 600;">Automated Data Analysis</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Using AI Code Interpreters to analyze fleet datasets and maintenance logs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="week-num">W03</div>
+                    <div class="module-content">
+                        <h4 style="font-weight: 600;">Research Synthesis</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Building custom agents to summarize technical whitepapers and industry reports.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="course">
-        <div class="container">
-            <div class="section-header">
-                <h2>GRAPH Program Highlights</h2>
-                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Participating in the 8-week bootcamp "Generative AI for Work & Research Productivity."</p>
-            </div>
-            
-            <div class="module-grid">
-                <!-- Module 1 -->
-                <div class="module-card">
-                    <div class="module-number">Module 01</div>
-                    <h3>Websites & Docs</h3>
-                    <p>Learning LLM mechanics and generating structured research documents using Markdown and HTML.</p>
-                    <div class="status-pill">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Completed
-                    </div>
+        <section id="artifacts">
+            <span class="section-label">Artifacts</span>
+            <div class="artifact-list">
+                <a href="#" class="artifact-card">
+                    <h3>Course Portfolio Website</h3>
+                    <p>Developing a structured, high-performance web presence using Generative AI for the 2024 Cohort.</p>
+                    <div class="status-pill done">Completed</div>
+                </a>
+
+                <div class="artifact-card">
+                    <h3>Fleet Maintenance Analysis</h3>
+                    <p>Applying automated data flows to identify cost reduction strategies in vehicle downtime.</p>
+                    <div class="status-pill">Pending</div>
                 </div>
 
-                <!-- Module 2 -->
-                <div class="module-card">
-                    <div class="module-number">Module 02</div>
-                    <h3>AI-Automated Data</h3>
-                    <p>Mastering AI tools for cleaning soil data and visualizing crop yield patterns autonomously.</p>
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">In Progress</div>
-                </div>
-
-                <!-- Module 6 -->
-                <div class="module-card">
-                    <div class="module-number">Module 06</div>
-                    <h3>Comm & Outreach</h3>
-                    <p>Designing scientific figures and research summaries using AI-driven visual tools.</p>
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">Upcoming</div>
+                <div class="artifact-card">
+                    <h3>Custom Maintenance GPT</h3>
+                    <p>A specialized knowledge agent for troubleshooting fleet telematics and GPS sensor data.</p>
+                    <div class="status-pill">Pending</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="portfolio" style="background-color: var(--bg-alt);">
-        <div class="container">
-            <div class="section-header">
-                <h2>Portfolio Log</h2>
-                <p>Tracking progress through the GRAPH Course journey.</p>
+        <footer>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/omotola-idowu">LinkedIn</a>
+                <a href="#">Resume</a>
             </div>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <h4 style="font-size: 1rem;">Capstone: AI-Powered Inventory System</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Automating mixed vegetable tracking for market gardens.</p>
-                    </div>
-                    <a href="#" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 1rem;">View Abstract</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container footer-content">
-            <div class="footer-logo logo">VICTOR<span>MEZA</span></div>
-            <p style="margin-bottom: 2rem;">Student at UC Davis | AI Enthusiast | Sustainable Agriculturist</p>
-            <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 2rem;">
-                <a href="#" style="color: var(--secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                <a href="#" style="color: var(--secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.2-18 11.6 7.2 1 12-1.4 13-3.5-4-.7-5.2-3-5.5-4.5 1.2.2 2.1 0 2.5-.5-4.5-1.3-4.2-4.8-4-5.8 1.1.6 2.1.4 2.5.2-3.8-1.5-3.5-5.2-2.5-6.5 4.3 4.7 9 6.2 15 5.5.3-3.5 1.3-4.2 3.3-4.7z"></path></svg></a>
-                <a href="mailto:vsmeza@ucdavis.edu" style="color: var(--secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 Victor Meza. Built with ChatGPT Canvas for The GRAPH Courses.</p>
-        </div>
-    </footer>
+            <p style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">
+                COHORT 2024 / THE GRAPH COURSES
+            </p>
+        </footer>
+    </div>
 
 </body>
 </html>
