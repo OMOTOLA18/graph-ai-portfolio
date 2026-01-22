@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Meza | GenAI for Agriculture & Research</title>
+    <title>Victor Meza | GRAPH Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4ade80; /* Light Green */
-            --secondary: #22d3ee; /* Cyan */
-            --accent: #86efac; /* Lighter Green */
-            --bg-dark: #020617;
-            --bg-card: rgba(15, 23, 42, 0.6);
-            --border: rgba(255, 255, 255, 0.1);
-            --text-p: #94a3b8;
-            --text-h: #f8fafc;
+            --primary: #22c55e; /* Vibrant Green from reference */
+            --primary-dark: #16a34a;
+            --secondary: #0f172a; /* Deep Navy text */
+            --bg-light: #ffffff;
+            --bg-alt: #f8fafc;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
 
         * {
@@ -27,419 +28,382 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-h);
-            line-height: 1.7;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        /* Ambient Background */
-        .ambient-glow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: radial-gradient(circle at 50% -20%, #064e3b 0%, #020617 100%);
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--secondary);
+            font-weight: 700;
         }
 
-        .glow-orb {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.12;
-            animation: pulse 15s infinite alternate;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        .orb-1 { top: -100px; right: -100px; background: var(--primary); }
-        .orb-2 { bottom: -200px; left: -100px; background: var(--secondary); animation-delay: -5s; }
-
-        @keyframes pulse {
-            0% { transform: scale(1) translate(0, 0); }
-            100% { transform: scale(1.2) translate(50px, 50px); }
-        }
-
-        /* Typography */
-        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
-        .gradient-text {
-            background: linear-gradient(to right, var(--primary), var(--accent), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Layout */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        section { padding: 120px 0; }
-
-        /* Navigation */
+        /* Header & Nav */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(20px);
+            background: white;
             border-bottom: 1px solid var(--border);
-            padding: 1.2rem 0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
         .nav-links a {
             text-decoration: none;
-            color: var(--text-p);
-            font-size: 0.85rem;
+            color: var(--text-main);
             font-weight: 500;
-            letter-spacing: 0.05em;
-            transition: 0.3s;
-            text-transform: uppercase;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
-        .nav-links a:hover { color: var(--primary); }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 100px 0;
+            background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.05), transparent);
             text-align: center;
-            padding-top: 80px;
         }
 
-        .hero-badge {
+        .badge {
             display: inline-block;
-            padding: 0.5rem 1.2rem;
-            border-radius: 100px;
-            background: rgba(74, 222, 128, 0.1);
-            border: 1px solid rgba(74, 222, 128, 0.2);
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            background: #dcfce7;
+            color: var(--primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
 
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
-        .hero p { max-width: 700px; margin: 0 auto 2.5rem; color: var(--text-p); font-size: 1.2rem; }
-
-        /* Glass Cards */
-        .glass-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            backdrop-filter: blur(12px);
-            border-radius: 24px;
-            padding: 2.5rem;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s;
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
         }
 
-        .glass-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(74, 222, 128, 0.4);
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
         }
 
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 2rem;
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            background: rgba(255,255,255,0.03);
-            padding: 1.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-        }
-
-        .stat-value { display: block; font-size: 1.5rem; font-weight: 800; color: var(--primary); }
-        .stat-label { font-size: 0.75rem; color: var(--text-p); text-transform: uppercase; }
-
-        /* Submission Grid */
-        .sub-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .week-tag {
-            font-size: 0.7rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .status-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            margin-right: 6px;
-            background: var(--primary);
-            box-shadow: 0 0 10px var(--primary);
-        }
-
+        /* Buttons */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 1.8rem;
-            border-radius: 12px;
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
-            transition: 0.3s;
-            font-size: 0.9rem;
+            transition: all 0.2s;
+            cursor: pointer;
         }
 
         .btn-primary {
             background: var(--primary);
-            color: var(--bg-dark);
-            box-shadow: 0 10px 20px -10px var(--primary);
+            color: white;
         }
 
-        .btn-primary:hover { transform: scale(1.05); }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
 
-        .btn-ghost {
-            color: var(--text-h);
+        .btn-outline {
             border: 1px solid var(--border);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-alt);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Module Cards */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .module-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: box-shadow 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-card:hover {
+            box-shadow: var(--card-shadow);
+            border-color: var(--primary);
+        }
+
+        .module-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .module-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Experience Pills */
+        .skill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
             margin-top: 1.5rem;
         }
 
-        .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: var(--primary); }
-
-        /* Course Path Styling */
-        .path-container {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .path-item {
-            margin-bottom: 3rem;
-            padding-left: 2rem;
-            border-left: 2px solid var(--border);
-            position: relative;
-        }
-
-        .path-item::before {
-            content: '';
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
+        .skill-pill {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* Footer */
         footer {
-            padding: 80px 0;
+            background: var(--bg-alt);
+            padding: 60px 0;
             border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
             text-align: center;
         }
 
-        .contact-pill {
-            display: inline-flex;
-            gap: 2rem;
-            background: var(--bg-card);
-            padding: 1rem 2rem;
-            border-radius: 100px;
-            border: 1px solid var(--border);
-            margin-top: 2rem;
+        .footer-logo {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
         }
 
-        @media (max-width: 900px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.25rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow">
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-    </div>
-
     <nav>
-        <div class="container nav-content">
-            <div style="font-family: 'Space Grotesk'; font-weight: 700; letter-spacing: -1px; font-size: 1.5rem;">VM<span style="color:var(--primary);">.</span></div>
+        <div class="container nav-flex">
+            <a href="#" class="logo">VICTOR<span>MEZA</span></a>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#course">The Program</a>
-                <a href="#submissions">Submissions</a>
+                <a href="#course">GRAPH Program</a>
+                <a href="#portfolio">Portfolio Log</a>
                 <a href="#contact">Contact</a>
             </div>
+            <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Get in Touch</a>
         </div>
     </nav>
 
-    <section class="hero">
+    <header class="hero">
         <div class="container">
-            <span class="hero-badge">AI Productivity Portfolio</span>
-            <h1>The Future of <span class="gradient-text">Agricultural Research</span> is Generative</h1>
-            <p>I'm Victor Meza, integrating No-Code AI tools to automate complex agricultural workflows and enhance scientific communication.</p>
+            <span class="badge">GenAI Portfolio 2026</span>
+            <h1>Bridging <span style="color: var(--primary);">Agriculture</span> and Artificial Intelligence</h1>
+            <p>I'm Victor Meza, an International Agriculture Development student at UC Davis using generative AI to optimize research and sustainable farming.</p>
             <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="#submissions" class="btn btn-primary">Browse Work</a>
-                <a href="#about" class="btn btn-ghost">Meet Victor</a>
+                <a href="#portfolio" class="btn btn-primary">View Assignments</a>
+                <a href="#about" class="btn btn-outline">My Story</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="about">
+    <section id="about" style="background-color: var(--bg-alt);">
         <div class="container">
             <div class="about-grid">
-                <div class="glass-card">
-                    <span class="week-tag">Scholar & Entrepreneur</span>
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Rooted in Growth</h2>
-                    <p>Based in Davis, California, I am currently pursuing a degree in <strong>International Agriculture Development</strong> at UC Davis. My academic journey is fueled by a passion for botany, soil science, and sustainable small-scale organic mixed vegetable production.</p>
-                    <br>
-                    <p>I blend my scientific background with entrepreneurial experience—having successfully managed <strong>Plants4You</strong>, where I've optimized logistics and propagated over 100 rare species.</p>
-                    
-                    <div class="stat-grid">
-                        <div class="stat-item">
-                            <span class="stat-value">500+</span>
-                            <span class="stat-label">Successful Sales</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">15%</span>
-                            <span class="stat-label">Shipping Cost Reduction</span>
-                        </div>
+                <div class="about-content">
+                    <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem;">The Background</span>
+                    <h3>Rooted in Research, Growing with Tech</h3>
+                    <p>Currently studying at <strong>UC Davis</strong>, my work focuses on small-scale organic mixed vegetable production and soil science. I combine this academic foundation with hands-on entrepreneurial experience as the owner of <strong>Plants4You</strong>.</p>
+                    <div class="skill-container">
+                        <div class="skill-pill">Botany & Physiology</div>
+                        <div class="skill-pill">Soil Science</div>
+                        <div class="skill-pill">E-Commerce</div>
+                        <div class="skill-pill">Tagalog Interpreter</div>
+                        <div class="skill-pill">Inventory Logic</div>
                     </div>
                 </div>
-
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
-                    <h3 style="margin-bottom: 1.5rem;">Core Competencies</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
-                        <span style="background: rgba(74, 222, 128, 0.1); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid rgba(74, 222, 128, 0.2);">Botany & Physiology</span>
-                        <span style="background: rgba(74, 222, 128, 0.1); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid rgba(74, 222, 128, 0.2);">Soil Science</span>
-                        <span style="background: rgba(74, 222, 128, 0.1); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid rgba(74, 222, 128, 0.2);">Fluent Tagalog</span>
-                        <span style="background: rgba(74, 222, 128, 0.1); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid rgba(74, 222, 128, 0.2);">Inventory Management</span>
-                        <span style="background: rgba(74, 222, 128, 0.1); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid rgba(74, 222, 128, 0.2);">E-Commerce Strategy</span>
+                <div style="background: white; padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--card-shadow);">
+                    <h4 style="margin-bottom: 1rem;">Core Impact</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">My objective is to secure a Spring quarter internship at the <strong>Student Farm Market Garden</strong> to apply AI-driven efficiency to organic farming.</p>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-weight: 600;">Etsy Sales</span>
+                            <span style="color: var(--primary-dark); font-weight: 700;">500+</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600;">Logistics Efficiency</span>
+                            <span style="color: var(--primary-dark); font-weight: 700;">+15%</span>
+                        </div>
                     </div>
-                    <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-p);">Currently seeking a Spring Quarter Internship at the <strong>UC Davis Student Farm Market Garden</strong>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="course" style="background: rgba(255,255,255,0.01);">
+    <section id="course">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: 2.5rem;">GRAPH Program</h2>
-                <p style="color: var(--text-p);">Generative AI for Work & Research Productivity</p>
+            <div class="section-header">
+                <h2>GRAPH Program Highlights</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Participating in the 8-week bootcamp "Generative AI for Work & Research Productivity."</p>
             </div>
-
-            <div class="about-grid">
-                <div class="path-container">
-                    <div class="path-item">
-                        <h4 style="color: var(--primary);">Research Efficiency</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-p);">Mastering automated literature reviews and scientific writing using LLMs to synthesize complex agricultural data.</p>
-                    </div>
-                    <div class="path-item">
-                        <h4 style="color: var(--primary);">Data Intelligence</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-p);">Utilizing no-code AI for cleaning soil data and visualizing crop yields with precision.</p>
-                    </div>
-                    <div class="path-item">
-                        <h4 style="color: var(--primary);">Automated Outreach</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-p);">Creating AI-generated scientific figures and research summaries to bridge the gap between labs and farmers.</p>
-                    </div>
-                </div>
-
-                <div class="glass-card" style="background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(34, 211, 238, 0.1));">
-                    <h3 style="margin-bottom: 1rem;">Capstone Vision</h3>
-                    <p style="font-size: 0.95rem;">My final project focuses on an <strong>AI-Powered Inventory System for Mixed Vegetable Production</strong>. By combining my Excel tracking experience with browser-control agents, I aim to create a self-updating market garden dashboard.</p>
-                    <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">View Concept Note</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="submissions">
-        <div class="container">
-            <div style="margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem;">Portfolio Log</h2>
-                <div style="width: 60px; height: 4px; background: var(--primary); margin-top: 1rem;"></div>
-            </div>
-
-            <div class="sub-grid">
+            
+            <div class="module-grid">
                 <!-- Module 1 -->
-                <div class="glass-card">
-                    <span class="week-tag">Module 01</span>
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                        <h3 style="font-size: 1.2rem;">Websites & Docs</h3>
-                        <span style="font-size: 0.7rem; color: var(--primary);"><span class="status-dot"></span> LIVE</span>
+                <div class="module-card">
+                    <div class="module-number">Module 01</div>
+                    <h3>Websites & Docs</h3>
+                    <p>Learning LLM mechanics and generating structured research documents using Markdown and HTML.</p>
+                    <div class="status-pill">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Completed
                     </div>
-                    <p style="font-size: 0.9rem; color: var(--text-p); margin-bottom: 1.5rem;">Establishing a digital presence using Markdown, HTML, and ChatGPT Canvas to showcase research and business growth.</p>
-                    <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Current Submission</a>
                 </div>
 
                 <!-- Module 2 -->
-                <div class="glass-card" style="opacity: 0.6;">
-                    <span class="week-tag">Module 02</span>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">AI-Automated Data</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-p);">Future project: Automating plant inventory data cleaning and trend visualization via AI assistants.</p>
-                    <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Coming Soon</a>
+                <div class="module-card">
+                    <div class="module-number">Module 02</div>
+                    <h3>AI-Automated Data</h3>
+                    <p>Mastering AI tools for cleaning soil data and visualizing crop yield patterns autonomously.</p>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">In Progress</div>
                 </div>
 
-                <!-- Module 5 -->
-                <div class="glass-card" style="opacity: 0.6;">
-                    <span class="week-tag">Module 05</span>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Agentic Workflows</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-p);">Future project: Building AI agents to monitor Etsy market trends and agricultural supply costs autonomously.</p>
-                    <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Coming Soon</a>
+                <!-- Module 6 -->
+                <div class="module-card">
+                    <div class="module-number">Module 06</div>
+                    <h3>Comm & Outreach</h3>
+                    <p>Designing scientific figures and research summaries using AI-driven visual tools.</p>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Upcoming</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" style="background-color: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Portfolio Log</h2>
+                <p>Tracking progress through the GRAPH Course journey.</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h4 style="font-size: 1rem;">Capstone: AI-Powered Inventory System</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Automating mixed vegetable tracking for market gardens.</p>
+                    </div>
+                    <a href="#" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 1rem;">View Abstract</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <div class="container">
-            <h2 style="margin-bottom: 1rem;">Let's Connect</h2>
-            <p style="color: var(--text-p);">Advancing agricultural sustainability through modern technology.</p>
-            
-            <div class="contact-pill">
-                <span>📍 Davis, CA</span>
-                <span>📞 (303) 555-6677</span>
+        <div class="container footer-content">
+            <div class="footer-logo logo">VICTOR<span>MEZA</span></div>
+            <p style="margin-bottom: 2rem;">Student at UC Davis | AI Enthusiast | Sustainable Agriculturist</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 2rem;">
+                <a href="#" style="color: var(--secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                <a href="#" style="color: var(--secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.2-18 11.6 7.2 1 12-1.4 13-3.5-4-.7-5.2-3-5.5-4.5 1.2.2 2.1 0 2.5-.5-4.5-1.3-4.2-4.8-4-5.8 1.1.6 2.1.4 2.5.2-3.8-1.5-3.5-5.2-2.5-6.5 4.3 4.7 9 6.2 15 5.5.3-3.5 1.3-4.2 3.3-4.7z"></path></svg></a>
+                <a href="mailto:vsmeza@ucdavis.edu" style="color: var(--secondary);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
             </div>
-
-            <p style="margin-top: 4rem; font-size: 0.75rem; color: var(--text-p); opacity: 0.5;">
-                &copy; 2026 Victor Meza. All Rights Reserved. <br>
-                Powered by Generative AI & The GRAPH Courses.
-            </p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 Victor Meza. Built with ChatGPT Canvas for The GRAPH Courses.</p>
         </div>
     </footer>
 
-    <script>
-        // Reveal animations on scroll
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.glass-card').forEach(card => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            card.style.transition = "all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)";
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
